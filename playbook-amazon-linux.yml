@@ -1,0 +1,19 @@
+---
+- hosts: all
+  gather_facts: False
+  remote_user: ec2-user
+  become: yes
+  become_method: sudo
+
+  # More roles can be added here too.
+  #roles: 
+  # - { role: pcextreme.nginx } 
+  # 
+  pre_tasks:
+   - name: Install python for Ansible
+     raw: bash -c "test -e /usr/bin/python || (yum -y update && yum install -qqy python)"
+     register: output
+     changed_when: output.stdout != ""
+
+   - name: Gathering Facts
+     setup:

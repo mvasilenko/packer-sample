@@ -1,0 +1,18 @@
+{
+  "builders": [{
+    "type": "amazon-ebs",
+    "region": "eu-central-1",
+    "source_ami": "ami-1e339e71",
+    "instance_type": "t2.micro",
+    "ssh_username": "ubuntu",
+    "ami_name": "Ubuntu Server 16.04 LTS Packer - {{timestamp}}"
+  }],
+
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "./playbook.yml"
+    }
+  ]
+
+}
