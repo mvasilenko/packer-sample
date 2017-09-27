@@ -1,11 +1,11 @@
 {
   "builders": [{
     "type": "amazon-ebs",
-    "region": "us-east-1",
-    "source_ami": "ami-e902508c",
-    "instance_type": "t1.micro",
+    "region": "eu-central-1",
+    "source_ami": "ami-1e339e71",
+    "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "Ubuntu 14.04 Packer - {{timestamp}}"
+    "ami_name": "Ubuntu Server 16.04 LTS Packer - {{timestamp}}"
   }],
 
   "provisioners": [

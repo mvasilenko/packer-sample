@@ -1,4 +1,4 @@
-# Packer Sample with Ansible 
+# EXAMPLE - Packer build AMI image Ubuntu 16.04 LTS with Ansible 
 
 Illustrate how to use Ansible as provisioner to Hashicorp''s Packer on creating AMI on EC2.
 
@@ -15,10 +15,6 @@ Packer, Ansible
 
 ### Post related to this repository:
 http://www.capsunlock.net/2016/09/packer-for-building-ami-on-ec2-and-beyond.html
-
-### Runtime 
-![Console Pic](packer_ansible.png)  
-
 
 ## Authors
 

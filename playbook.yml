@@ -1,5 +1,6 @@
 ---
 - hosts: all
+  gather_facts: False
   remote_user: ubuntu
   become: yes
   become_method: sudo
@@ -9,6 +10,14 @@
   # - { role: pcextreme.nginx } 
   # 
   pre_tasks:
+   - name: Install python for Ansible
+     raw: bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qqy python-minimal)"
+     register: output
+     changed_when: output.stdout != ""
+
+   - name: Gathering Facts
+     setup:
+
    - name: update apt
      apt: update_cache=yes 
 
@@ -17,4 +26,3 @@
 
    - name: install nginx  
      apt: name=nginx
-  
