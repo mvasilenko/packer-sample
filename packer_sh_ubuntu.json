@@ -10,8 +10,8 @@
 
   "provisioners": [
     {
-      "type": "ansible",
-      "playbook_file": "./playbook.yml"
+      "type": "shell",
+      "script": "scripts/packer-ubuntu-base-setup.sh"
     }
   ]
 

@@ -1,0 +1,18 @@
+{
+  "builders": [{
+    "type": "amazon-ebs",
+    "region": "eu-central-1",
+    "source_ami": "ami-657bd20a",
+    "instance_type": "t2.micro",
+    "ssh_username": "ec2-user",
+    "ami_name": "Amazon Linux Packer - {{timestamp}}"
+  }],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "scripts/packer-amazon-linux-base-setup.sh"
+    }
+  ]
+
+}
